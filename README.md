@@ -18,6 +18,14 @@ Open-source PHP application to convert PDF files to plain text, powered by [spat
 
 ---
 
+## To-do List
+
+- [ ] Adding SCSS
+- [ ] Adding HRM and dev server
+- [ ] Adding [tesseract-orm](https://github.com/tesseract-ocr/tesseract) for image PDF
+
+---
+
 ## Installation
 
 ### Docker (all platforms)
