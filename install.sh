@@ -14,9 +14,9 @@ DIM='\033[2m'
 NC='\033[0m'
 
 echo ""
-echo -e "${BOLD}╔══════════════════════════════════════════════╗${NC}"
-echo -e "${BOLD}║   Installation - PDF → Texte App             ║${NC}"
-echo -e "${BOLD}╚══════════════════════════════════════════════╝${NC}"
+echo -e "${BOLD}╔══════════════════════════════════════════════════════╗${NC}"
+echo -e "${BOLD}║   Installation - DePDF - PDF → Texte App             ║${NC}"
+echo -e "${BOLD}╚══════════════════════════════════════════════════════╝${NC}"
 echo ""
 
 # 1. Vérifier PHP

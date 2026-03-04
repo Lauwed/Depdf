@@ -10,8 +10,8 @@ $canonicalUrl = $scheme . '://' . $host . '/legal.php';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Legal Notice — PDF to Text Converter</title>
-    <meta name="description" content="Legal Notice for the PDF to Text Converter. Open-source MIT-licensed self-hosted PHP application powered by pdftotext and spatie/pdf-to-text.">
+    <title>Legal Notice — DePDF - PDF to Text Converter</title>
+    <meta name="description" content="Legal Notice for the DePDF - PDF to Text Converter. Open-source MIT-licensed self-hosted PHP application powered by pdftotext and spatie/pdf-to-text.">
     <meta name="robots" content="noindex, follow">
     <link rel="canonical" href="<?= $canonicalUrl ?>">
 
@@ -20,25 +20,125 @@ $canonicalUrl = $scheme . '://' . $host . '/legal.php';
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Outfit:wght@300;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <style>
-        .legal-page { max-width: 760px; margin: 0 auto; padding: 3rem 1.5rem; }
-        .legal-page h1 { font-size: 2rem; margin-bottom: 0.5rem; }
-        .legal-page h1 span { color: var(--accent); }
-        .legal-page .subtitle { color: var(--text-muted); margin-bottom: 3rem; font-size: 0.95rem; }
-        .legal-page h2 { font-size: 1.1rem; font-weight: 700; color: var(--text); margin: 2rem 0 0.75rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border); }
-        .legal-page p { color: var(--text-muted); line-height: 1.8; margin-bottom: 1rem; font-size: 0.95rem; }
-        .legal-page ul { color: var(--text-muted); line-height: 1.8; margin: 0.5rem 0 1rem 1.5rem; font-size: 0.95rem; }
-        .legal-page ul li { margin-bottom: 0.4rem; }
-        .info-table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
-        .info-table td { padding: 0.6rem 0.75rem; border: 1px solid var(--border); font-size: 0.9rem; }
-        .info-table td:first-child { color: var(--text-muted); width: 40%; background: var(--surface-2); }
-        .info-table td:last-child { color: var(--text); background: var(--surface); }
-        .info-table a { color: var(--accent); text-decoration: none; }
-        .back-link { display: inline-flex; align-items: center; gap: 0.4rem; color: var(--text-muted); text-decoration: none; font-size: 0.9rem; margin-bottom: 2rem; transition: color 0.2s; }
-        .back-link:hover { color: var(--accent); }
-        .legal-footer { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--border); color: var(--text-muted); font-size: 0.85rem; display: flex; gap: 1.5rem; flex-wrap: wrap; }
-        .legal-footer a { color: var(--text-muted); text-decoration: none; }
-        .legal-footer a:hover { color: var(--accent); }
-        code { font-family: var(--mono); font-size: 0.85em; background: var(--surface-2); padding: 0.15em 0.4em; border-radius: 4px; color: var(--accent); }
+        .legal-page {
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem;
+        }
+
+        .legal-page h1 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .legal-page h1 span {
+            color: var(--accent);
+        }
+
+        .legal-page .subtitle {
+            color: var(--text-muted);
+            margin-bottom: 3rem;
+            font-size: 0.95rem;
+        }
+
+        .legal-page h2 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--text);
+            margin: 2rem 0 0.75rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .legal-page p {
+            color: var(--text-muted);
+            line-height: 1.8;
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+
+        .legal-page ul {
+            color: var(--text-muted);
+            line-height: 1.8;
+            margin: 0.5rem 0 1rem 1.5rem;
+            font-size: 0.95rem;
+        }
+
+        .legal-page ul li {
+            margin-bottom: 0.4rem;
+        }
+
+        .info-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+
+        .info-table td {
+            padding: 0.6rem 0.75rem;
+            border: 1px solid var(--border);
+            font-size: 0.9rem;
+        }
+
+        .info-table td:first-child {
+            color: var(--text-muted);
+            width: 40%;
+            background: var(--surface-2);
+        }
+
+        .info-table td:last-child {
+            color: var(--text);
+            background: var(--surface);
+        }
+
+        .info-table a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            margin-bottom: 2rem;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent);
+        }
+
+        .legal-footer {
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border);
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .legal-footer a {
+            color: var(--text-muted);
+            text-decoration: none;
+        }
+
+        .legal-footer a:hover {
+            color: var(--accent);
+        }
+
+        code {
+            font-family: var(--mono);
+            font-size: 0.85em;
+            background: var(--surface-2);
+            padding: 0.15em 0.4em;
+            border-radius: 4px;
+            color: var(--accent);
+        }
     </style>
 </head>
 
@@ -51,18 +151,36 @@ $canonicalUrl = $scheme . '://' . $host . '/legal.php';
 
         <h2>1. Publisher</h2>
         <table class="info-table">
-            <tr><td>Name / Organisation</td><td>[YOUR NAME OR ORGANISATION]</td></tr>
-            <tr><td>Address</td><td>[YOUR ADDRESS], Belgium</td></tr>
-            <tr><td>Email</td><td><a href="mailto:contact@example.be">contact@example.be</a></td></tr>
-            <tr><td>Country</td><td>Belgium</td></tr>
+            <tr>
+                <td>Name / Organisation</td>
+                <td>[YOUR NAME OR ORGANISATION]</td>
+            </tr>
+            <tr>
+                <td>Address</td>
+                <td>[YOUR ADDRESS], Belgium</td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td><a href="mailto:contact@example.be">contact@example.be</a></td>
+            </tr>
+            <tr>
+                <td>Country</td>
+                <td>Belgium</td>
+            </tr>
         </table>
         <p>This application is free open-source software distributed under the MIT licence. It is not operated for commercial purposes.</p>
 
         <h2>2. Hosting</h2>
         <p>This application is designed to be <strong>self-hosted</strong>. The hosting provider is therefore the person or organisation deploying this instance. If you are using a public instance, the specific hosting details for that instance should be provided here.</p>
         <table class="info-table">
-            <tr><td>Hosting type</td><td>Self-hosted</td></tr>
-            <tr><td>Location</td><td>[SERVER COUNTRY / REGION]</td></tr>
+            <tr>
+                <td>Hosting type</td>
+                <td>Self-hosted</td>
+            </tr>
+            <tr>
+                <td>Location</td>
+                <td>[SERVER COUNTRY / REGION]</td>
+            </tr>
         </table>
 
         <h2>3. Intellectual property</h2>
@@ -85,7 +203,7 @@ $canonicalUrl = $scheme . '://' . $host . '/legal.php';
         <p>In accordance with the <strong>General Data Protection Regulation (GDPR)</strong> applicable in Belgium, and the <strong>Belgian Act of 30 July 2018</strong> on the protection of natural persons with regard to the processing of personal data, you have the right to access, rectify, erase and port your personal data.</p>
         <p>To exercise these rights, contact: <a href="mailto:contact@example.be" style="color:var(--accent)">contact@example.be</a></p>
         <p>In the event of a dispute, you may lodge a complaint with the <strong>Data Protection Authority (DPA)</strong>:<br>
-        Rue de la Presse 35, 1000 Brussels — <a href="https://www.dataprotectionauthority.be" target="_blank" style="color:var(--accent)">www.dataprotectionauthority.be</a></p>
+            Rue de la Presse 35, 1000 Brussels — <a href="https://www.dataprotectionauthority.be" target="_blank" style="color:var(--accent)">www.dataprotectionauthority.be</a></p>
 
         <h2>6. Applicable law</h2>
         <p>This legal notice is governed by <strong>Belgian law</strong>. In the event of a dispute, the competent Belgian courts shall have sole jurisdiction.</p>

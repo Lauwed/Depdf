@@ -15,9 +15,9 @@ DIM='\033[2m'
 NC='\033[0m'
 
 echo ""
-echo -e "${BOLD}╔══════════════════════════════════════════════╗${NC}"
-echo -e "${BOLD}║   Installation macOS - PDF → Texte App       ║${NC}"
-echo -e "${BOLD}╚══════════════════════════════════════════════╝${NC}"
+echo -e "${BOLD}╔══════════════════════════════════════════════════════╗${NC}"
+echo -e "${BOLD}║   Installation macOS - DePDF - PDF → Texte App       ║${NC}"
+echo -e "${BOLD}╚══════════════════════════════════════════════════════╝${NC}"
 echo ""
 
 # 1. Vérifier Homebrew

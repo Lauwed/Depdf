@@ -1,4 +1,4 @@
-# PDF → Text
+# DePDF
 
 Open-source PHP application to convert PDF files to plain text, powered by [spatie/pdf-to-text](https://github.com/spatie/pdf-to-text) and `pdftotext` (poppler-utils).
 
@@ -69,6 +69,7 @@ cd pdf-to-text-app
 The script installs [Chocolatey](https://chocolatey.org) (if not present), PHP, poppler and Composer.
 
 > **Note:** If script execution is blocked, run first:
+>
 > ```powershell
 > Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
 > ```
@@ -116,12 +117,12 @@ php convert.php report.pdf --layout --output=report.txt
 php convert.php report.pdf --output=report.txt --quiet
 ```
 
-| Option | Description |
-|---|---|
-| `--layout` | Preserve the PDF layout |
-| `--pages=N-M` | Extract pages N to M only |
-| `--output=FILE` | Save result to a file |
-| `--quiet` | No console preview (with `--output`) |
+| Option          | Description                          |
+| --------------- | ------------------------------------ |
+| `--layout`      | Preserve the PDF layout              |
+| `--pages=N-M`   | Extract pages N to M only            |
+| `--output=FILE` | Save result to a file                |
+| `--quiet`       | No console preview (with `--output`) |
 
 ---
 
@@ -251,17 +252,17 @@ Tests live in `tests/` and cover the `src/` classes (PSR-4, `App\` namespace). T
 
 The web UI (`public/index.php`) ships with full on-page SEO out of the box:
 
-| Tag / feature | Details |
-|---|---|
-| `<title>` | "PDF to Text Converter — Free Online Tool" |
-| `<meta name="description">` | Concise, keyword-rich description |
-| `<link rel="canonical">` | Dynamically built from `HTTP_HOST` |
-| Open Graph (`og:*`) | Title, description, URL, type, site name |
-| Twitter Card | `summary` card with title and description |
-| JSON-LD (`WebApplication`) | Schema.org structured data with feature list and free offer |
-| `<meta name="theme-color">` | Brand accent colour `#e94560` |
-| Font preconnect | `<link rel="preconnect">` for `fonts.googleapis.com` and `fonts.gstatic.com` |
-| `robots.txt` | `public/robots.txt` — allows all crawlers, excludes upload/output directories |
+| Tag / feature               | Details                                                                       |
+| --------------------------- | ----------------------------------------------------------------------------- |
+| `<title>`                   | "DePDF - PDF to Text Converter — Free Online Tool"                            |
+| `<meta name="description">` | Concise, keyword-rich description                                             |
+| `<link rel="canonical">`    | Dynamically built from `HTTP_HOST`                                            |
+| Open Graph (`og:*`)         | Title, description, URL, type, site name                                      |
+| Twitter Card                | `summary` card with title and description                                     |
+| JSON-LD (`WebApplication`)  | Schema.org structured data with feature list and free offer                   |
+| `<meta name="theme-color">` | Brand accent colour `#e94560`                                                 |
+| Font preconnect             | `<link rel="preconnect">` for `fonts.googleapis.com` and `fonts.gstatic.com`  |
+| `robots.txt`                | `public/robots.txt` — allows all crawlers, excludes upload/output directories |
 
 Legal subpages (`privacy.php`, `legal.php`) carry `noindex, follow` to avoid indexing thin content.
 

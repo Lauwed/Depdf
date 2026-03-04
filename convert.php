@@ -9,17 +9,32 @@ use Spatie\PdfToText\Exceptions\PdfNotFound;
 use Spatie\PdfToText\Exceptions\CouldNotExtractText;
 
 // ─── Terminal colours ────────────────────────────────────────────
-function bold($text)  { return "\033[1m{$text}\033[0m"; }
-function red($text)   { return "\033[31m{$text}\033[0m"; }
-function green($text) { return "\033[32m{$text}\033[0m"; }
-function cyan($text)  { return "\033[36m{$text}\033[0m"; }
-function dim($text)   { return "\033[2m{$text}\033[0m"; }
+function bold($text)
+{
+    return "\033[1m{$text}\033[0m";
+}
+function red($text)
+{
+    return "\033[31m{$text}\033[0m";
+}
+function green($text)
+{
+    return "\033[32m{$text}\033[0m";
+}
+function cyan($text)
+{
+    return "\033[36m{$text}\033[0m";
+}
+function dim($text)
+{
+    return "\033[2m{$text}\033[0m";
+}
 
 // ─── Banner ─────────────────────────────────────────────────────
 echo "\n";
-echo bold("  ╔══════════════════════════════════╗\n");
-echo bold("  ║       PDF → Text Converter       ║\n");
-echo bold("  ╚══════════════════════════════════╝\n");
+echo bold("  ╔══════════════════════════════════════════╗\n");
+echo bold("  ║       DePDF - PDF → Text Converter       ║\n");
+echo bold("  ╚══════════════════════════════════════════╝\n");
 echo "\n";
 
 // ─── Arguments ──────────────────────────────────────────────────

@@ -159,24 +159,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $response['mode']     = $mode;
                 $response['download'] = basename($outPath);
             }
-
         } catch (BinaryNotFoundException $e) {
             if (file_exists($pdfPath)) unlink($pdfPath);
             $response['message'] = 'Server configuration error: pdftotext (poppler-utils) is not installed or not executable. '
                 . 'Run the install script or install poppler-utils manually.';
-
         } catch (PdfNotFound $e) {
             if (file_exists($pdfPath)) unlink($pdfPath);
             $response['message'] = 'Internal error: the uploaded PDF could not be read. '
                 . 'This may indicate a permissions issue on the server.';
-
         } catch (CouldNotExtractText $e) {
             if (file_exists($pdfPath)) unlink($pdfPath);
             // ⚠ Do NOT use $e->getMessage() — ProcessFailedException includes the full command
             //   line with its arguments, which would expose any password supplied by the user.
             $stderr = $e->getProcess()->getErrorOutput();
             $response['message'] = ErrorDiagnoser::diagnose($stderr);
-
         } catch (\Exception $e) {
             if (file_exists($pdfPath)) unlink($pdfPath);
             $response['message'] = 'Unexpected error during extraction. Please try again.';
@@ -246,7 +242,7 @@ $canonicalUrl = $scheme . '://' . $host . '/';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>PDF to Text Converter — Free Online Tool</title>
+    <title>DePDF - PDF to Text Converter — Free Online Tool</title>
     <meta name="description" content="Convert PDF to plain text online for free. Preserve layout, select page ranges, choose encoding, and handle password-protected PDFs. Privacy-first: files are deleted immediately after conversion.">
     <meta name="keywords" content="pdf to text, pdf converter, extract text from pdf, online pdf tool, pdftotext, pdf text extractor, free pdf converter">
     <meta name="author" content="PDF to Text">
@@ -258,69 +254,71 @@ $canonicalUrl = $scheme . '://' . $host . '/';
     <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="<?= $canonicalUrl ?>">
-    <meta property="og:title" content="PDF to Text Converter — Free Online Tool">
+    <meta property="og:title" content="DePDF - PDF to Text Converter — Free Online Tool">
     <meta property="og:description" content="Convert PDF to plain text online for free. Preserve layout, select page ranges, choose encoding, and handle password-protected PDFs. Privacy-first: files deleted immediately.">
     <meta property="og:site_name" content="PDF to Text">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="PDF to Text Converter — Free Online Tool">
+    <meta name="twitter:title" content="DePDF - PDF to Text Converter — Free Online Tool">
     <meta name="twitter:description" content="Convert PDF to plain text online for free. Preserve layout, select page ranges, choose encoding, and handle password-protected PDFs.">
 
     <!-- Structured data -->
     <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "WebApplication",
-        "name": "PDF to Text Converter",
-        "url": <?= json_encode($canonicalUrl) ?>,
-        "description": "Convert PDF to plain text online for free. Extract text with layout preservation, page range selection, encoding options, and password support.",
-        "applicationCategory": "UtilitiesApplication",
-        "operatingSystem": "Web",
-        "offers": {
-            "@type": "Offer",
-            "price": "0",
-            "priceCurrency": "USD"
-        },
-        "featureList": [
-            "Drag and drop file upload",
-            "Layout preservation mode",
-            "Page range selection",
-            "Multiple encoding support",
-            "Password-protected PDF support",
-            "Privacy-first: no file storage"
-        ]
-    }
+        {
+            "@context": "https://schema.org",
+            "@type": "WebApplication",
+            "name": "DePDF - PDF to Text Converter",
+            "url": <?= json_encode($canonicalUrl) ?>,
+            "description": "Convert PDF to plain text online for free. Extract text with layout preservation, page range selection, encoding options, and password support.",
+            "applicationCategory": "UtilitiesApplication",
+            "operatingSystem": "Web",
+            "offers": {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "USD"
+            },
+            "featureList": [
+                "Drag and drop file upload",
+                "Layout preservation mode",
+                "Page range selection",
+                "Multiple encoding support",
+                "Password-protected PDF support",
+                "Privacy-first: no file storage"
+            ]
+        }
     </script>
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Outfit:wght@300;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
     <div class="container">
         <div class="header">
-            <h1>PDF <span>→</span> Text</h1>
-            <p>Convert your PDF files to plain text in one click</p>
+            <h1 class="header__title">DePDF</h1>
+            <p class="header__subtitle">Convert your PDF files to plain text in one click</p>
         </div>
 
         <div class="drop-zone" id="dropZone">
-            <span class="icon">📄</span>
-            <div class="label">Drop your PDF here or click to browse</div>
-            <div class="sublabel">PDF only · 10 MB max</div>
-            <input type="file" id="fileInput" accept=".pdf,application/pdf">
+            <svg class="drop-zone__icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-file-icon lucide-file">
+                <path d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z" />
+                <path d="M14 2v5a1 1 0 0 0 1 1h5" />
+            </svg>
+            <div class="drop-zone__label">Drop your PDF here or click to browse</div>
+            <div class="drop-zone__sublabel">PDF only · 10 MB max</div>
+            <input class="drop-zone__input" type="file" id="fileInput" accept=".pdf,application/pdf">
         </div>
 
         <div class="file-info" id="fileInfo">
-            <div class="file-icon">📄</div>
-            <div class="file-details">
-                <div class="file-name" id="fileName"></div>
-                <div class="file-size" id="fileSize"></div>
+            <svg class="file-icon__icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-file-icon lucide-file">
+                <path d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z" />
+                <path d="M14 2v5a1 1 0 0 0 1 1h5" />
+            </svg>
+            <div class="file-info__details">
+                <div class="file-info__name" id="fileName"></div>
+                <div class="file-info__size" id="fileSize"></div>
             </div>
-            <button class="remove-btn" id="removeFile" title="Remove">×</button>
+            <button class="file-info__remove" id="removeFile" title="Remove">×</button>
         </div>
 
         <!-- ─── Options panel ───────────────────────────────────── -->

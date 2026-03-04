@@ -20,7 +20,7 @@ function Write-Info($msg) {
 
 Write-Host ""
 Write-Host "=================================================" -ForegroundColor White
-Write-Host "  Installation Windows - PDF to Text App" -ForegroundColor White
+Write-Host "  Installation Windows - DePDF - PDF to Text App" -ForegroundColor White
 Write-Host "=================================================" -ForegroundColor White
 Write-Host ""
 
