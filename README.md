@@ -2,6 +2,8 @@
 
 Open-source PHP application to convert PDF files to plain text, powered by [spatie/pdf-to-text](https://github.com/spatie/pdf-to-text) and `pdftotext` (poppler-utils).
 
+<img width="1721" height="1016" alt="Screenshot of the DePDF app" src="https://github.com/user-attachments/assets/369491d7-ee0d-45de-b8f1-28dc71e00a40" />
+
 **MIT License** · No data retained · Self-hostable
 
 ---
@@ -23,7 +25,7 @@ Open-source PHP application to convert PDF files to plain text, powered by [spat
 The easiest way to run the app on any OS without installing PHP or poppler locally.
 
 ```bash
-git clone https://github.com/[YOUR-ACCOUNT]/pdf-to-text-app.git
+git clone https://github.com/lauwed/pdf-to-text-app.git
 cd pdf-to-text-app
 docker compose up --build
 ```
@@ -37,7 +39,7 @@ Open **http://localhost:8080** in your browser. The image is built with PHP 8.3 
 ### Linux / WSL / Ubuntu
 
 ```bash
-git clone https://github.com/[YOUR-ACCOUNT]/pdf-to-text-app.git
+git clone https://github.com/lauwed/pdf-to-text-app.git
 cd pdf-to-text-app
 chmod +x install.sh
 ./install.sh
@@ -48,7 +50,7 @@ The script automatically installs PHP, poppler-utils, Composer and PHP dependenc
 ### macOS
 
 ```bash
-git clone https://github.com/[YOUR-ACCOUNT]/pdf-to-text-app.git
+git clone https://github.com/lauwed/pdf-to-text-app.git
 cd pdf-to-text-app
 chmod +x install-mac.sh
 ./install-mac.sh
@@ -61,7 +63,7 @@ Requires [Homebrew](https://brew.sh). The script installs PHP, poppler and Compo
 Open **PowerShell as Administrator**, then:
 
 ```powershell
-git clone https://github.com/[YOUR-ACCOUNT]/pdf-to-text-app.git
+git clone https://github.com/lauwed/pdf-to-text-app.git
 cd pdf-to-text-app
 .\install-windows.ps1
 ```
