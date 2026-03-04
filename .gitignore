@@ -1,0 +1,7 @@
+/vendor/
+/uploads/*
+/output/*
+!uploads/.gitkeep
+!output/.gitkeep
+.phpunit.result.cache
+.claude

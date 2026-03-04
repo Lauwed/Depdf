@@ -1,0 +1,20 @@
+# Dependencies (installed inside container)
+vendor/
+
+# Runtime directories (created by Docker)
+uploads/*
+output/*
+!uploads/.gitkeep
+!output/.gitkeep
+
+# Dev & OS files
+.git/
+.gitignore
+.claude/
+*.md
+docker-compose.yml
+Dockerfile
+
+# Windows / macOS
+Thumbs.db
+.DS_Store

@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+# These directories are outside the web root when document root is public/,
+# but are listed here as a precaution for non-standard deployments.
+Disallow: /uploads/
+Disallow: /output/

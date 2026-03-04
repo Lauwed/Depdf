@@ -1,0 +1,12 @@
+services:
+  app:
+    build: .
+    ports:
+      - "8080:80"
+    volumes:
+      # Mount for live editing during development (remove in production)
+      - ./public:/var/www/html/public
+      # Persist upload/output directories (files are deleted after use, but keeps the dirs)
+      - ./uploads:/var/www/html/uploads
+      - ./output:/var/www/html/output
+    restart: unless-stopped
